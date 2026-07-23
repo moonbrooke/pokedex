@@ -46,7 +46,7 @@
   },
   {
     "#": 3,
-    "Name": "Venusaur Mega Venusaur",
+    "Name": "Venusaur - Mega Venusaur",
     "Type": [
       "Grass",
       "Poison"
@@ -104,7 +104,7 @@
   },
   {
     "#": 6,
-    "Name": "Charizard Mega Charizard X",
+    "Name": "Charizard - Mega Charizard X",
     "Type": [
       "Fire",
       "Dragon"
@@ -119,7 +119,7 @@
   },
   {
     "#": 6,
-    "Name": "Charizard Mega Charizard Y",
+    "Name": "Charizard - Mega Charizard Y",
     "Type": [
       "Fire",
       "Flying"
@@ -176,7 +176,7 @@
   },
   {
     "#": 9,
-    "Name": "Blastoise Mega Blastoise",
+    "Name": "Blastoise - Mega Blastoise",
     "Type": [
       "Water"
     ],
@@ -278,7 +278,7 @@
   },
   {
     "#": 15,
-    "Name": "Beedrill Mega Beedrill",
+    "Name": "Beedrill - Mega Beedrill",
     "Type": [
       "Bug",
       "Poison"
@@ -338,7 +338,7 @@
   },
   {
     "#": 18,
-    "Name": "Pidgeot Mega Pidgeot",
+    "Name": "Pidgeot - Mega Pidgeot",
     "Type": [
       "Normal",
       "Flying"
@@ -367,7 +367,7 @@
   },
   {
     "#": 19,
-    "Name": "Rattata Alolan Rattata",
+    "Name": "Rattata - Alolan Rattata",
     "Type": [
       "Dark",
       "Normal"
@@ -396,7 +396,7 @@
   },
   {
     "#": 20,
-    "Name": "Raticate Alolan Raticate",
+    "Name": "Raticate - Alolan Raticate",
     "Type": [
       "Dark",
       "Normal"
@@ -511,7 +511,7 @@
   },
   {
     "#": 26,
-    "Name": "Raichu Alolan Raichu",
+    "Name": "Raichu - Alolan Raichu",
     "Type": [
       "Electric",
       "Psychic"
@@ -540,7 +540,7 @@
   },
   {
     "#": 27,
-    "Name": "Sandshrew Alolan Sandshrew",
+    "Name": "Sandshrew - Alolan Sandshrew",
     "Type": [
       "Ice",
       "Steel"
@@ -569,7 +569,7 @@
   },
   {
     "#": 28,
-    "Name": "Sandslash Alolan Sandslash",
+    "Name": "Sandslash - Alolan Sandslash",
     "Type": [
       "Ice",
       "Steel"
@@ -712,7 +712,7 @@
   },
   {
     "#": 37,
-    "Name": "Vulpix Alolan Vulpix",
+    "Name": "Vulpix - Alolan Vulpix",
     "Type": [
       "Ice"
     ],
@@ -740,7 +740,7 @@
   },
   {
     "#": 38,
-    "Name": "Ninetales Alolan Ninetales",
+    "Name": "Ninetales - Alolan Ninetales",
     "Type": [
       "Ice",
       "Fairy"
@@ -934,7 +934,7 @@
   },
   {
     "#": 50,
-    "Name": "Diglett Alolan Diglett",
+    "Name": "Diglett - Alolan Diglett",
     "Type": [
       "Ground",
       "Steel"
@@ -963,7 +963,7 @@
   },
   {
     "#": 51,
-    "Name": "Dugtrio Alolan Dugtrio",
+    "Name": "Dugtrio - Alolan Dugtrio",
     "Type": [
       "Ground",
       "Steel"
@@ -992,7 +992,7 @@
   },
   {
     "#": 52,
-    "Name": "Meowth Alolan Meowth",
+    "Name": "Meowth - Alolan Meowth",
     "Type": [
       "Dark"
     ],
@@ -1006,7 +1006,7 @@
   },
   {
     "#": 52,
-    "Name": "Meowth Galarian Meowth",
+    "Name": "Meowth - Galarian Meowth",
     "Type": [
       "Steel"
     ],
@@ -1034,7 +1034,7 @@
   },
   {
     "#": 53,
-    "Name": "Persian Alolan Persian",
+    "Name": "Persian - Alolan Persian",
     "Type": [
       "Dark"
     ],
@@ -1118,7 +1118,7 @@
   },
   {
     "#": 58,
-    "Name": "Growlithe Hisuian Growlithe",
+    "Name": "Growlithe - Hisuian Growlithe",
     "Type": [
       "Fire",
       "Rock"
@@ -1147,7 +1147,7 @@
   },
   {
     "#": 59,
-    "Name": "Arcanine Hisuian Arcanine",
+    "Name": "Arcanine - Hisuian Arcanine",
     "Type": [
       "Fire",
       "Rock"
@@ -1247,7 +1247,7 @@
   },
   {
     "#": 65,
-    "Name": "Alakazam Mega Alakazam",
+    "Name": "Alakazam - Mega Alakazam",
     "Type": [
       "Psychic"
     ],
@@ -1348,7 +1348,7 @@
   },
   {
     "#": 71,
-    "Name": "Victreebel Mega Victreebel",
+    "Name": "Victreebel - Mega Victreebel",
     "Type": [
       "Grass",
       "Poison"
@@ -1408,7 +1408,7 @@
   },
   {
     "#": 74,
-    "Name": "Geodude Alolan Geodude",
+    "Name": "Geodude - Alolan Geodude",
     "Type": [
       "Rock",
       "Electric"
@@ -1438,7 +1438,7 @@
   },
   {
     "#": 75,
-    "Name": "Graveler Alolan Graveler",
+    "Name": "Graveler - Alolan Graveler",
     "Type": [
       "Rock",
       "Electric"
@@ -1468,7 +1468,7 @@
   },
   {
     "#": 76,
-    "Name": "Golem Alolan Golem",
+    "Name": "Golem - Alolan Golem",
     "Type": [
       "Rock",
       "Electric"
@@ -1497,7 +1497,7 @@
   },
   {
     "#": 77,
-    "Name": "Ponyta Galarian Ponyta",
+    "Name": "Ponyta - Galarian Ponyta",
     "Type": [
       "Psychic"
     ],
@@ -1525,7 +1525,7 @@
   },
   {
     "#": 78,
-    "Name": "Rapidash Galarian Rapidash",
+    "Name": "Rapidash - Galarian Rapidash",
     "Type": [
       "Psychic",
       "Fairy"
@@ -1555,7 +1555,7 @@
   },
   {
     "#": 79,
-    "Name": "Slowpoke Galarian Slowpoke",
+    "Name": "Slowpoke - Galarian Slowpoke",
     "Type": [
       "Psychic"
     ],
@@ -1584,7 +1584,7 @@
   },
   {
     "#": 80,
-    "Name": "Slowbro Mega Slowbro",
+    "Name": "Slowbro - Mega Slowbro",
     "Type": [
       "Water",
       "Psychic"
@@ -1599,7 +1599,7 @@
   },
   {
     "#": 80,
-    "Name": "Slowbro Galarian Slowbro",
+    "Name": "Slowbro - Galarian Slowbro",
     "Type": [
       "Poison",
       "Psychic"
@@ -1659,7 +1659,7 @@
   },
   {
     "#": 83,
-    "Name": "Farfetch'd Galarian Farfetch'd",
+    "Name": "Farfetch'd - Galarian Farfetch'd",
     "Type": [
       "Fighting"
     ],
@@ -1746,7 +1746,7 @@
   },
   {
     "#": 88,
-    "Name": "Grimer Alolan Grimer",
+    "Name": "Grimer - Alolan Grimer",
     "Type": [
       "Poison",
       "Dark"
@@ -1775,7 +1775,7 @@
   },
   {
     "#": 89,
-    "Name": "Muk Alolan Muk",
+    "Name": "Muk - Alolan Muk",
     "Type": [
       "Poison",
       "Dark"
@@ -1864,7 +1864,7 @@
   },
   {
     "#": 94,
-    "Name": "Gengar Mega Gengar",
+    "Name": "Gengar - Mega Gengar",
     "Type": [
       "Ghost",
       "Poison"
@@ -1964,7 +1964,7 @@
   },
   {
     "#": 100,
-    "Name": "Voltorb Hisuian Voltorb",
+    "Name": "Voltorb - Hisuian Voltorb",
     "Type": [
       "Electric",
       "Grass"
@@ -1993,7 +1993,7 @@
   },
   {
     "#": 101,
-    "Name": "Electrode Hisuian Electrode",
+    "Name": "Electrode - Hisuian Electrode",
     "Type": [
       "Electric",
       "Grass"
@@ -2038,7 +2038,7 @@
   },
   {
     "#": 103,
-    "Name": "Exeggutor Alolan Exeggutor",
+    "Name": "Exeggutor - Alolan Exeggutor",
     "Type": [
       "Grass",
       "Dragon"
@@ -2081,7 +2081,7 @@
   },
   {
     "#": 105,
-    "Name": "Marowak Alolan Marowak",
+    "Name": "Marowak - Alolan Marowak",
     "Type": [
       "Fire",
       "Ghost"
@@ -2166,7 +2166,7 @@
   },
   {
     "#": 110,
-    "Name": "Weezing Galarian Weezing",
+    "Name": "Weezing - Galarian Weezing",
     "Type": [
       "Poison",
       "Fairy"
@@ -2253,7 +2253,7 @@
   },
   {
     "#": 115,
-    "Name": "Kangaskhan Mega Kangaskhan",
+    "Name": "Kangaskhan - Mega Kangaskhan",
     "Type": [
       "Normal"
     ],
@@ -2367,7 +2367,7 @@
   },
   {
     "#": 122,
-    "Name": "Mr. Mime Galarian Mr. Mime",
+    "Name": "Mr. Mime - Galarian Mr. Mime",
     "Type": [
       "Ice",
       "Psychic"
@@ -2454,7 +2454,7 @@
   },
   {
     "#": 127,
-    "Name": "Pinsir Mega Pinsir",
+    "Name": "Pinsir - Mega Pinsir",
     "Type": [
       "Bug",
       "Flying"
@@ -2556,7 +2556,7 @@
   },
   {
     "#": 130,
-    "Name": "Gyarados Mega Gyarados",
+    "Name": "Gyarados - Mega Gyarados",
     "Type": [
       "Water",
       "Dark"
@@ -2759,7 +2759,7 @@
   },
   {
     "#": 142,
-    "Name": "Aerodactyl Mega Aerodactyl",
+    "Name": "Aerodactyl - Mega Aerodactyl",
     "Type": [
       "Rock",
       "Flying"
@@ -2803,7 +2803,7 @@
   },
   {
     "#": 144,
-    "Name": "Articuno Galarian Articuno",
+    "Name": "Articuno - Galarian Articuno",
     "Type": [
       "Psychic",
       "Flying"
@@ -2833,7 +2833,7 @@
   },
   {
     "#": 145,
-    "Name": "Zapdos Galarian Zapdos",
+    "Name": "Zapdos - Galarian Zapdos",
     "Type": [
       "Fighting",
       "Flying"
@@ -2863,7 +2863,7 @@
   },
   {
     "#": 146,
-    "Name": "Moltres Galarian Moltres",
+    "Name": "Moltres - Galarian Moltres",
     "Type": [
       "Dark",
       "Flying"
@@ -2921,7 +2921,7 @@
   },
   {
     "#": 149,
-    "Name": "Dragonite Mega Dragonite",
+    "Name": "Dragonite - Mega Dragonite",
     "Type": [
       "Dragon",
       "Flying"
@@ -2950,7 +2950,7 @@
   },
   {
     "#": 150,
-    "Name": "Mewtwo Mega Mewtwo X",
+    "Name": "Mewtwo - Mega Mewtwo X",
     "Type": [
       "Psychic",
       "Fighting"
@@ -2965,7 +2965,7 @@
   },
   {
     "#": 150,
-    "Name": "Mewtwo Mega Mewtwo Y",
+    "Name": "Mewtwo - Mega Mewtwo Y",
     "Type": [
       "Psychic"
     ],
@@ -3077,7 +3077,7 @@
   },
   {
     "#": 157,
-    "Name": "Typhlosion Hisuian Typhlosion",
+    "Name": "Typhlosion - Hisuian Typhlosion",
     "Type": [
       "Fire",
       "Ghost"
@@ -3441,7 +3441,7 @@
   },
   {
     "#": 181,
-    "Name": "Ampharos Mega Ampharos",
+    "Name": "Ampharos - Mega Ampharos",
     "Type": [
       "Electric",
       "Dragon"
@@ -3733,7 +3733,7 @@
   },
   {
     "#": 199,
-    "Name": "Slowking Galarian Slowking",
+    "Name": "Slowking - Galarian Slowking",
     "Type": [
       "Poison",
       "Psychic"
@@ -3878,7 +3878,7 @@
   },
   {
     "#": 208,
-    "Name": "Steelix Mega Steelix",
+    "Name": "Steelix - Mega Steelix",
     "Type": [
       "Steel",
       "Ground"
@@ -3936,7 +3936,7 @@
   },
   {
     "#": 211,
-    "Name": "Qwilfish Hisuian Qwilfish",
+    "Name": "Qwilfish - Hisuian Qwilfish",
     "Type": [
       "Dark",
       "Poison"
@@ -3966,7 +3966,7 @@
   },
   {
     "#": 212,
-    "Name": "Scizor Mega Scizor",
+    "Name": "Scizor - Mega Scizor",
     "Type": [
       "Bug",
       "Steel"
@@ -4011,7 +4011,7 @@
   },
   {
     "#": 214,
-    "Name": "Heracross Mega Heracross",
+    "Name": "Heracross - Mega Heracross",
     "Type": [
       "Bug",
       "Fighting"
@@ -4041,7 +4041,7 @@
   },
   {
     "#": 215,
-    "Name": "Sneasel Hisuian Sneasel",
+    "Name": "Sneasel - Hisuian Sneasel",
     "Type": [
       "Fighting",
       "Poison"
@@ -4158,7 +4158,7 @@
   },
   {
     "#": 222,
-    "Name": "Corsola Galarian Corsola",
+    "Name": "Corsola - Galarian Corsola",
     "Type": [
       "Ghost"
     ],
@@ -4275,7 +4275,7 @@
   },
   {
     "#": 229,
-    "Name": "Houndoom Mega Houndoom",
+    "Name": "Houndoom - Mega Houndoom",
     "Type": [
       "Dark",
       "Fire"
@@ -4561,7 +4561,7 @@
   },
   {
     "#": 248,
-    "Name": "Tyranitar Mega Tyranitar",
+    "Name": "Tyranitar - Mega Tyranitar",
     "Type": [
       "Rock",
       "Dark"
@@ -4663,7 +4663,7 @@
   },
   {
     "#": 254,
-    "Name": "Sceptile Mega Sceptile",
+    "Name": "Sceptile - Mega Sceptile",
     "Type": [
       "Grass",
       "Dragon"
@@ -4722,7 +4722,7 @@
   },
   {
     "#": 257,
-    "Name": "Blaziken Mega Blaziken",
+    "Name": "Blaziken - Mega Blaziken",
     "Type": [
       "Fire",
       "Fighting"
@@ -4781,7 +4781,7 @@
   },
   {
     "#": 260,
-    "Name": "Swampert Mega Swampert",
+    "Name": "Swampert - Mega Swampert",
     "Type": [
       "Water",
       "Ground"
@@ -4838,7 +4838,7 @@
   },
   {
     "#": 263,
-    "Name": "Zigzagoon Galarian Zigzagoon",
+    "Name": "Zigzagoon - Galarian Zigzagoon",
     "Type": [
       "Dark",
       "Normal"
@@ -4867,7 +4867,7 @@
   },
   {
     "#": 264,
-    "Name": "Linoone Galarian Linoone",
+    "Name": "Linoone - Galarian Linoone",
     "Type": [
       "Dark",
       "Normal"
@@ -5148,7 +5148,7 @@
   },
   {
     "#": 282,
-    "Name": "Gardevoir Mega Gardevoir",
+    "Name": "Gardevoir - Mega Gardevoir",
     "Type": [
       "Psychic",
       "Fairy"
@@ -5451,7 +5451,7 @@
   },
   {
     "#": 302,
-    "Name": "Sableye Mega Sableye",
+    "Name": "Sableye - Mega Sableye",
     "Type": [
       "Dark",
       "Ghost"
@@ -5481,7 +5481,7 @@
   },
   {
     "#": 303,
-    "Name": "Mawile Mega Mawile",
+    "Name": "Mawile - Mega Mawile",
     "Type": [
       "Steel",
       "Fairy"
@@ -5541,7 +5541,7 @@
   },
   {
     "#": 306,
-    "Name": "Aggron Mega Aggron",
+    "Name": "Aggron - Mega Aggron",
     "Type": [
       "Steel"
     ],
@@ -5585,7 +5585,7 @@
   },
   {
     "#": 308,
-    "Name": "Medicham Mega Medicham",
+    "Name": "Medicham - Mega Medicham",
     "Type": [
       "Fighting",
       "Psychic"
@@ -5628,7 +5628,7 @@
   },
   {
     "#": 310,
-    "Name": "Manectric Mega Manectric",
+    "Name": "Manectric - Mega Manectric",
     "Type": [
       "Electric"
     ],
@@ -5771,7 +5771,7 @@
   },
   {
     "#": 319,
-    "Name": "Sharpedo Mega Sharpedo",
+    "Name": "Sharpedo - Mega Sharpedo",
     "Type": [
       "Water",
       "Dark"
@@ -5844,7 +5844,7 @@
   },
   {
     "#": 323,
-    "Name": "Camerupt Mega Camerupt",
+    "Name": "Camerupt - Mega Camerupt",
     "Type": [
       "Fire",
       "Ground"
@@ -6018,7 +6018,7 @@
   },
   {
     "#": 334,
-    "Name": "Altaria Mega Altaria",
+    "Name": "Altaria - Mega Altaria",
     "Type": [
       "Dragon",
       "Fairy"
@@ -6366,7 +6366,7 @@
   },
   {
     "#": 354,
-    "Name": "Banette Mega Banette",
+    "Name": "Banette - Mega Banette",
     "Type": [
       "Ghost"
     ],
@@ -6451,7 +6451,7 @@
   },
   {
     "#": 359,
-    "Name": "Absol Mega Absol",
+    "Name": "Absol - Mega Absol",
     "Type": [
       "Dark"
     ],
@@ -6507,7 +6507,7 @@
   },
   {
     "#": 362,
-    "Name": "Glalie Mega Glalie",
+    "Name": "Glalie - Mega Glalie",
     "Type": [
       "Ice"
     ],
@@ -6680,7 +6680,7 @@
   },
   {
     "#": 373,
-    "Name": "Salamence Mega Salamence",
+    "Name": "Salamence - Mega Salamence",
     "Type": [
       "Dragon",
       "Flying"
@@ -6740,7 +6740,7 @@
   },
   {
     "#": 376,
-    "Name": "Metagross Mega Metagross",
+    "Name": "Metagross - Mega Metagross",
     "Type": [
       "Steel",
       "Psychic"
@@ -6812,7 +6812,7 @@
   },
   {
     "#": 380,
-    "Name": "Latias Mega Latias",
+    "Name": "Latias - Mega Latias",
     "Type": [
       "Dragon",
       "Psychic"
@@ -6842,7 +6842,7 @@
   },
   {
     "#": 381,
-    "Name": "Latios Mega Latios",
+    "Name": "Latios - Mega Latios",
     "Type": [
       "Dragon",
       "Psychic"
@@ -6929,7 +6929,7 @@
   },
   {
     "#": 384,
-    "Name": "Rayquaza Mega Rayquaza",
+    "Name": "Rayquaza - Mega Rayquaza",
     "Type": [
       "Dragon",
       "Flying"
@@ -7680,7 +7680,7 @@
   },
   {
     "#": 428,
-    "Name": "Lopunny Mega Lopunny",
+    "Name": "Lopunny - Mega Lopunny",
     "Type": [
       "Normal",
       "Fighting"
@@ -7944,7 +7944,7 @@
   },
   {
     "#": 445,
-    "Name": "Garchomp Mega Garchomp",
+    "Name": "Garchomp - Mega Garchomp",
     "Type": [
       "Dragon",
       "Ground"
@@ -8002,7 +8002,7 @@
   },
   {
     "#": 448,
-    "Name": "Lucario Mega Lucario",
+    "Name": "Lucario - Mega Lucario",
     "Type": [
       "Fighting",
       "Steel"
@@ -8192,7 +8192,7 @@
   },
   {
     "#": 460,
-    "Name": "Abomasnow Mega Abomasnow",
+    "Name": "Abomasnow - Mega Abomasnow",
     "Type": [
       "Grass",
       "Ice"
@@ -8425,7 +8425,7 @@
   },
   {
     "#": 475,
-    "Name": "Gallade Mega Gallade",
+    "Name": "Gallade - Mega Gallade",
     "Type": [
       "Psychic",
       "Fighting"
@@ -8499,7 +8499,7 @@
   },
   {
     "#": 479,
-    "Name": "Rotom Heat Rotom",
+    "Name": "Rotom - Heat Rotom",
     "Type": [
       "Electric",
       "Fire"
@@ -8514,7 +8514,7 @@
   },
   {
     "#": 479,
-    "Name": "Rotom Wash Rotom",
+    "Name": "Rotom - Wash Rotom",
     "Type": [
       "Electric",
       "Water"
@@ -8529,7 +8529,7 @@
   },
   {
     "#": 479,
-    "Name": "Rotom Frost Rotom",
+    "Name": "Rotom - Frost Rotom",
     "Type": [
       "Electric",
       "Ice"
@@ -8544,7 +8544,7 @@
   },
   {
     "#": 479,
-    "Name": "Rotom Fan Rotom",
+    "Name": "Rotom - Fan Rotom",
     "Type": [
       "Electric",
       "Flying"
@@ -8559,7 +8559,7 @@
   },
   {
     "#": 479,
-    "Name": "Rotom Mow Rotom",
+    "Name": "Rotom - Mow Rotom",
     "Type": [
       "Electric",
       "Grass"
@@ -8977,7 +8977,7 @@
   },
   {
     "#": 503,
-    "Name": "Samurott Hisuian Samurott",
+    "Name": "Samurott - Hisuian Samurott",
     "Type": [
       "Water",
       "Dark"
@@ -9390,7 +9390,7 @@
   },
   {
     "#": 531,
-    "Name": "Audino Mega Audino",
+    "Name": "Audino - Mega Audino",
     "Type": [
       "Normal",
       "Fairy"
@@ -9667,7 +9667,7 @@
   },
   {
     "#": 549,
-    "Name": "Lilligant Hisuian Lilligant",
+    "Name": "Lilligant - Hisuian Lilligant",
     "Type": [
       "Grass",
       "Fighting"
@@ -9783,7 +9783,7 @@
   },
   {
     "#": 554,
-    "Name": "Darumaka Galarian Darumaka",
+    "Name": "Darumaka - Galarian Darumaka",
     "Type": [
       "Ice"
     ],
@@ -9826,7 +9826,7 @@
   },
   {
     "#": 555,
-    "Name": "Darmanitan Galarian Standard Mode",
+    "Name": "Darmanitan - Galarian Standard Mode",
     "Type": [
       "Ice"
     ],
@@ -9840,7 +9840,7 @@
   },
   {
     "#": 555,
-    "Name": "Darmanitan Galarian Zen Mode",
+    "Name": "Darmanitan - Galarian Zen Mode",
     "Type": [
       "Ice",
       "Fire"
@@ -9958,7 +9958,7 @@
   },
   {
     "#": 562,
-    "Name": "Yamask Galarian Yamask",
+    "Name": "Yamask - Galarian Yamask",
     "Type": [
       "Ground",
       "Ghost"
@@ -10089,7 +10089,7 @@
   },
   {
     "#": 570,
-    "Name": "Zorua Hisuian Zorua",
+    "Name": "Zorua - Hisuian Zorua",
     "Type": [
       "Normal",
       "Ghost"
@@ -10118,7 +10118,7 @@
   },
   {
     "#": 571,
-    "Name": "Zoroark Hisuian Zoroark",
+    "Name": "Zoroark - Hisuian Zoroark",
     "Type": [
       "Normal",
       "Ghost"
@@ -10809,7 +10809,7 @@
   },
   {
     "#": 618,
-    "Name": "Stunfisk Galarian Stunfisk",
+    "Name": "Stunfisk - Galarian Stunfisk",
     "Type": [
       "Ground",
       "Steel"
@@ -10970,7 +10970,7 @@
   },
   {
     "#": 628,
-    "Name": "Braviary Hisuian Braviary",
+    "Name": "Braviary - Hisuian Braviary",
     "Type": [
       "Psychic",
       "Flying"
@@ -11994,7 +11994,7 @@
   },
   {
     "#": 687,
-    "Name": "Malamar Mega Malamar",
+    "Name": "Malamar - Mega Malamar",
     "Type": [
       "Dark",
       "Psychic"
@@ -12216,7 +12216,7 @@
   },
   {
     "#": 701,
-    "Name": "Hawlucha Mega Hawlucha",
+    "Name": "Hawlucha - Mega Hawlucha",
     "Type": [
       "Fighting",
       "Flying"
@@ -12289,7 +12289,7 @@
   },
   {
     "#": 705,
-    "Name": "Sliggoo Hisuian Sliggoo",
+    "Name": "Sliggoo - Hisuian Sliggoo",
     "Type": [
       "Steel",
       "Dragon"
@@ -12318,7 +12318,7 @@
   },
   {
     "#": 706,
-    "Name": "Goodra Hisuian Goodra",
+    "Name": "Goodra - Hisuian Goodra",
     "Type": [
       "Steel",
       "Dragon"
@@ -12526,7 +12526,7 @@
   },
   {
     "#": 713,
-    "Name": "Avalugg Hisuian Avalugg",
+    "Name": "Avalugg - Hisuian Avalugg",
     "Type": [
       "Ice",
       "Rock"
@@ -12660,7 +12660,7 @@
   },
   {
     "#": 719,
-    "Name": "Diancie Mega Diancie",
+    "Name": "Diancie - Mega Diancie",
     "Type": [
       "Rock",
       "Fairy"
@@ -12765,7 +12765,7 @@
   },
   {
     "#": 724,
-    "Name": "Decidueye Hisuian Decidueye",
+    "Name": "Decidueye - Hisuian Decidueye",
     "Type": [
       "Grass",
       "Fighting"
