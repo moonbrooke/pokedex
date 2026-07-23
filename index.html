@@ -45,7 +45,7 @@
             </div>
 
             <button @click="toggleDarkMode"
-                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
                 aria-label="Toggle Dark Mode">
                 <template x-if="darkMode">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,8 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="space-y-6 mb-8">
             <div class="relative">
-                <input type="text" x-model="searchQuery" placeholder="Search Pokémon by name, #ID, or type..."
+                <input type="text" x-model="searchQuery" @input="currentPage = 1"
+                    placeholder="Search Pokémon by name, #ID, or type..."
                     class="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
                 <svg class="w-5 h-5 absolute left-3.5 top-3.5 text-gray-400" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24">
@@ -81,8 +82,8 @@
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Filter
                         by Type (Multi-select)</span>
-                    <button x-show="selectedTypes.length > 0" @click="selectedTypes = []"
-                        class="text-xs text-red-500 hover:underline font-medium" x-cloak>
+                    <button x-show="selectedTypes.length > 0" @click="selectedTypes = []; currentPage = 1"
+                        class="text-xs text-red-500 hover:underline font-medium cursor-pointer" x-cloak>
                         Clear selection
                     </button>
                 </div>
@@ -91,7 +92,7 @@
                         <button @click="toggleType(type)"
                             :class="selectedTypes.includes(type) ? 'ring-2 ring-offset-2 ring-gray-900 dark:ring-white opacity-100 scale-105' : 'opacity-70 hover:opacity-100'"
                             :style="{ backgroundColor: typeColors[type] }"
-                            class="px-3 py-1 rounded-md text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm">
+                            class="px-3 py-1 rounded-md text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer">
                             <span x-text="type"></span>
                         </button>
                     </template>
@@ -99,9 +100,14 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center mb-4 text-sm text-gray-500 dark:text-gray-400">
-            <div>Showing <span class="font-bold text-gray-800 dark:text-gray-200"
-                    x-text="filteredPokemon.length"></span> Pokémon</div>
+        <div
+            class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4 text-sm text-gray-500 dark:text-gray-400">
+            <div>
+                Showing
+                <span class="font-bold text-gray-800 dark:text-gray-200" x-text="paginatedPokemon.length"></span>
+                of
+                <span class="font-bold text-gray-800 dark:text-gray-200" x-text="filteredPokemon.length"></span> Pokémon
+            </div>
             <div class="text-xs">Click table headers to sort</div>
         </div>
 
@@ -198,7 +204,7 @@
                     </template>
 
                     <template x-if="!loading && !error">
-                        <template x-for="(pkmn, index) in filteredPokemon" :key="index">
+                        <template x-for="(pkmn, index) in paginatedPokemon" :key="index">
                             <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
                                 <td class="py-3 px-4 font-mono text-gray-500 dark:text-gray-400"
                                     x-text="formatId(pkmn['#'])"></td>
@@ -235,6 +241,38 @@
                 </tbody>
             </table>
         </div>
+
+        <div x-show="!loading && !error && totalPages > 1"
+            class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6" x-cloak>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-bold text-gray-800 dark:text-gray-200" x-text="currentPage"></span> of <span
+                    class="font-bold text-gray-800 dark:text-gray-200" x-text="totalPages"></span>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <button @click="prevPage" :disabled="currentPage === 1"
+                    class="px-3 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
+                    Previous
+                </button>
+
+                <div class="flex items-center space-x-1">
+                    <template x-for="page in totalPages" :key="page">
+                        <button
+                            x-show="page === 1 || page === totalPages || (page >= currentPage - 1 && page <= currentPage + 1)"
+                            @click="goToPage(page)"
+                            :class="currentPage === page ? 'bg-red-500 text-white border-red-500' : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                            class="w-9 h-9 border rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                            x-text="page">
+                        </button>
+                    </template>
+                </div>
+
+                <button @click="nextPage" :disabled="currentPage === totalPages"
+                    class="px-3 py-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer">
+                    Next
+                </button>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -247,6 +285,8 @@
                 selectedTypes: [],
                 sortColumn: '#',
                 sortAscending: true,
+                currentPage: 1,
+                itemsPerPage: 20,
                 availableTypes: [
                     'Normal', 'Fire', 'Water', 'Grass', 'Electric', 'Ice',
                     'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic',
@@ -307,6 +347,7 @@
                     } else {
                         this.selectedTypes.push(type);
                     }
+                    this.currentPage = 1;
                 },
                 formatId(id) {
                     return '#' + String(id).padStart(4, '0');
@@ -354,6 +395,26 @@
                         if (aVal > bVal) return this.sortAscending ? 1 : -1;
                         return 0;
                     });
+                },
+                get totalPages() {
+                    return Math.ceil(this.filteredPokemon.length / this.itemsPerPage) || 1;
+                },
+                get paginatedPokemon() {
+                    const start = (this.currentPage - 1) * this.itemsPerPage;
+                    return this.filteredPokemon.slice(start, start + this.itemsPerPage);
+                },
+                nextPage() {
+                    if (this.currentPage < this.totalPages) {
+                        this.currentPage++;
+                    }
+                },
+                prevPage() {
+                    if (this.currentPage > 1) {
+                        this.currentPage--;
+                    }
+                },
+                goToPage(page) {
+                    this.currentPage = page;
                 }
             }
         }
