@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Pokédex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-200"
+    x-data="pokedexApp()">
+
+    <header
+        class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/80 sticky top-0 z-30 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-8 h-8 rounded-full border-4 border-red-600 bg-white flex items-center justify-center relative shadow-sm">
+                    <div class="w-full h-1 bg-red-600 absolute top-1/2 -translate-y-1/2"></div>
+                    <div class="w-2.5 h-2.5 bg-gray-800 rounded-full z-10 border-2 border-white"></div>
+                </div>
+                <h1 class="text-2xl font-bold tracking-tight">Pokédex</h1>
+            </div>
+
+            <button @click="toggleDarkMode"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                aria-label="Toggle Dark Mode">
+                <template x-if="darkMode">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </template>
+                <template x-if="!darkMode">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </template>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="space-y-6 mb-8">
+            <div class="relative">
+                <input type="text" x-model="searchQuery" placeholder="Search Pokémon by name, #ID, or type..."
+                    class="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all">
+                <svg class="w-5 h-5 absolute left-3.5 top-3.5 text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Filter
+                        by Type (Multi-select)</span>
+                    <button x-show="selectedTypes.length > 0" @click="selectedTypes = []"
+                        class="text-xs text-red-500 hover:underline font-medium" x-cloak>
+                        Clear selection
+                    </button>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <template x-for="type in availableTypes" :key="type">
+                        <button @click="toggleType(type)"
+                            :class="selectedTypes.includes(type) ? 'ring-2 ring-offset-2 ring-gray-900 dark:ring-white opacity-100 scale-105' : 'opacity-70 hover:opacity-100'"
+                            :style="{ backgroundColor: typeColors[type] }"
+                            class="px-3 py-1 rounded-md text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm">
+                            <span x-text="type"></span>
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mb-4 text-sm text-gray-500 dark:text-gray-400">
+            <div>Showing <span class="font-bold text-gray-800 dark:text-gray-200"
+                    x-text="filteredPokemon.length"></span> Pokémon</div>
+            <div class="text-xs">Click table headers to sort</div>
+        </div>
+
+        <div
+            class="overflow-x-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+            <table class="w-full text-left text-sm">
+                <thead
+                    class="bg-gray-50 dark:bg-gray-700/50 text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider border-b border-gray-200 dark:border-gray-700">
+                    <tr>
+                        <th @click="sortBy('#')"
+                            class="py-3.5 px-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center space-x-1">
+                                <span>#</span>
+                                <span x-html="getSortIcon('#')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Name')"
+                            class="py-3.5 px-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center space-x-1">
+                                <span>Name</span>
+                                <span x-html="getSortIcon('Name')"></span>
+                            </div>
+                        </th>
+                        <th class="py-3.5 px-4">Type</th>
+                        <th @click="sortBy('Total')"
+                            class="py-3.5 px-4 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Total</span>
+                                <span x-html="getSortIcon('Total')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('HP')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>HP</span>
+                                <span x-html="getSortIcon('HP')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Attack')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Atk</span>
+                                <span x-html="getSortIcon('Attack')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Defense')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Def</span>
+                                <span x-html="getSortIcon('Defense')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Sp. Atk')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Sp.Atk</span>
+                                <span x-html="getSortIcon('Sp. Atk')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Sp. Def')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Sp.Def</span>
+                                <span x-html="getSortIcon('Sp. Def')"></span>
+                            </div>
+                        </th>
+                        <th @click="sortBy('Speed')"
+                            class="py-3.5 px-3 text-right cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/80 transition-colors">
+                            <div class="flex items-center justify-end space-x-1">
+                                <span>Spd</span>
+                                <span x-html="getSortIcon('Speed')"></span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <template x-if="loading">
+                        <tr>
+                            <td colspan="10" class="py-12 text-center text-gray-500 dark:text-gray-400">
+                                <div
+                                    class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-red-500 border-t-transparent mb-2">
+                                </div>
+                                <div>Loading Pokémon dataset...</div>
+                            </td>
+                        </tr>
+                    </template>
+
+                    <template x-if="error">
+                        <tr>
+                            <td colspan="10" class="py-8 text-center text-red-500 dark:text-red-400">
+                                <span x-text="error"></span>
+                            </td>
+                        </tr>
+                    </template>
+
+                    <template x-if="!loading && !error">
+                        <template x-for="(pkmn, index) in filteredPokemon" :key="index">
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                                <td class="py-3 px-4 font-mono text-gray-500 dark:text-gray-400"
+                                    x-text="formatId(pkmn['#'])"></td>
+                                <td class="py-3 px-4 font-semibold text-gray-900 dark:text-gray-100"
+                                    x-text="cleanName(pkmn.Name)"></td>
+                                <td class="py-3 px-4">
+                                    <div class="flex flex-wrap gap-1">
+                                        <template x-for="t in pkmn.Type" :key="t">
+                                            <span
+                                                class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white shadow-xs"
+                                                :style="{ backgroundColor: typeColors[t] }" x-text="t"></span>
+                                        </template>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4 text-right font-bold text-gray-900 dark:text-gray-100"
+                                    x-text="pkmn.Total"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn.HP"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn.Attack"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn.Defense"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn['Sp. Atk']"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn['Sp. Def']"></td>
+                                <td class="py-3 px-3 text-right font-mono" x-text="pkmn.Speed"></td>
+                            </tr>
+                        </template>
+                    </template>
+
+                    <template x-if="!loading && !error && filteredPokemon.length === 0">
+                        <tr>
+                            <td colspan="10" class="py-8 text-center text-gray-500 dark:text-gray-400">
+                                No Pokémon match your current filter criteria.
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function pokedexApp() {
+            return {
+                darkMode: true,
+                loading: true,
+                error: null,
+                searchQuery: '',
+                selectedTypes: [],
+                sortColumn: '#',
+                sortAscending: true,
+                availableTypes: [
+                    'Normal', 'Fire', 'Water', 'Grass', 'Electric', 'Ice',
+                    'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic',
+                    'Bug', 'Rock', 'Ghost', 'Dark', 'Dragon', 'Steel', 'Fairy'
+                ],
+                typeColors: {
+                    Normal: '#A8A77A',
+                    Fire: '#EE8130',
+                    Water: '#6390F0',
+                    Grass: '#7AC74C',
+                    Electric: '#F7D02C',
+                    Ice: '#96D9D6',
+                    Fighting: '#C22E28',
+                    Poison: '#A33EA1',
+                    Ground: '#E2BF65',
+                    Flying: '#A98FF3',
+                    Psychic: '#F95587',
+                    Bug: '#A6B91A',
+                    Rock: '#B6A136',
+                    Ghost: '#735797',
+                    Dark: '#705746',
+                    Dragon: '#6F35FC',
+                    Steel: '#B7B7CE',
+                    Fairy: '#D685AD'
+                },
+                rawPokemon: [],
+                async init() {
+                    if (this.darkMode) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+
+                    try {
+                        const response = await fetch('pokemon.json');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        this.rawPokemon = await response.json();
+                    } catch (err) {
+                        console.error('Error loading Pokémon dataset:', err);
+                        this.error = 'Failed to load pokemon.json. Ensure the JSON file is in the same directory and served via a local web server.';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+                toggleDarkMode() {
+                    this.darkMode = !this.darkMode;
+                    if (this.darkMode) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                },
+                toggleType(type) {
+                    if (this.selectedTypes.includes(type)) {
+                        this.selectedTypes = this.selectedTypes.filter(t => t !== type);
+                    } else {
+                        this.selectedTypes.push(type);
+                    }
+                },
+                formatId(id) {
+                    return '#' + String(id).padStart(4, '0');
+                },
+                cleanName(name) {
+                    return name.replace(/ｿｽ/g, 'e');
+                },
+                sortBy(column) {
+                    if (this.sortColumn === column) {
+                        this.sortAscending = !this.sortAscending;
+                    } else {
+                        this.sortColumn = column;
+                        this.sortAscending = true;
+                    }
+                },
+                getSortIcon(column) {
+                    if (this.sortColumn !== column) {
+                        return '<span class="text-gray-300 dark:text-gray-600">↕</span>';
+                    }
+                    return this.sortAscending ? '↑' : '↓';
+                },
+                get filteredPokemon() {
+                    let query = this.searchQuery.toLowerCase().trim();
+
+                    return this.rawPokemon.filter(pkmn => {
+                        const matchesName = pkmn.Name ? pkmn.Name.toLowerCase().includes(query) : false;
+                        const matchesId = pkmn['#'] ? (String(pkmn['#']).includes(query) || this.formatId(pkmn['#']).toLowerCase().includes(query)) : false;
+                        const matchesTypeQuery = Array.isArray(pkmn.Type) && pkmn.Type.some(t => t.toLowerCase().includes(query));
+                        const matchesText = matchesName || matchesId || matchesTypeQuery;
+
+                        const matchesSelectedTypes = this.selectedTypes.length === 0 ||
+                            (Array.isArray(pkmn.Type) && pkmn.Type.some(t => this.selectedTypes.includes(t)));
+
+                        return matchesText && matchesSelectedTypes;
+                    }).sort((a, b) => {
+                        let aVal = a[this.sortColumn];
+                        let bVal = b[this.sortColumn];
+
+                        if (typeof aVal === 'string') {
+                            aVal = aVal.toLowerCase();
+                            bVal = bVal.toLowerCase();
+                        }
+
+                        if (aVal < bVal) return this.sortAscending ? -1 : 1;
+                        if (aVal > bVal) return this.sortAscending ? 1 : -1;
+                        return 0;
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
